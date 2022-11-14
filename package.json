@@ -1,7 +1,7 @@
 {
     "name": "better-logger",
     "version": "1.0.0",
-    "description": "A better logger for Node.js",
+    "description": "A better logger for Node.js that logs timestamp, date and time of logs along with colors to make debugging easier in large scale.",
     "main": "dist/index.js",
     "scripts": {
         "preinstall": "tsc",
