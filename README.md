@@ -11,6 +11,6 @@ It's very simple to use, simply import the package and that's all!
 ```js
 import 'better-logger';
 
-console.log('This is a log!'); // [14/11/2022 11:39:02 pm 1668449342517] This is a log!
-console.error('An Error!'); // [14/11/2022 11:39:02 pm 1668449342517] An Error!
+console.log('This is a log!'); // [14/11/22 11:39:02 PM 1668449342517] This is a log!
+console.error('An Error!');    // [14/11/22 11:39:02 PM 1668449342517] An Error!
 ```
