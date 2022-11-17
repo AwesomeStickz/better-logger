@@ -20,6 +20,7 @@
     },
     "homepage": "https://github.com/AwesomeStickz/better-logger#readme",
     "dependencies": {
-        "chalk": "^4.1.2"
+        "chalk": "^4.1.2",
+        "tslib": "^2.4.1"
     }
 }
