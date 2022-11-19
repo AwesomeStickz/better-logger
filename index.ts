@@ -15,7 +15,7 @@ const getDebugInfo = () => {
     return chalk.gray(`[${date} ${time} ${timestamp}]`);
 };
 
-console.error = (...args) => error(getDebugInfo(), chalk.red(...args));
+console.error = (...args) => error(getDebugInfo(), ...args.map((arg) => chalk.red(arg instanceof Error ? arg.stack : arg)));
 console.info = (...args) => info(getDebugInfo(), ...args);
 console.log = (...args) => log(getDebugInfo(), ...args);
-console.warn = (...args) => warn(getDebugInfo(), chalk.yellow(...args));
+console.warn = (...args) => warn(getDebugInfo(), ...args.map((arg) => chalk.yellow(arg instanceof Error ? arg.stack : arg)));
