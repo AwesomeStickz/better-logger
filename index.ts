@@ -1,6 +1,5 @@
 import chalk from 'chalk';
-
-const { error, info, log, warn } = console;
+import { debug, error, info, log, warn } from 'console';
 
 const getDebugInfo = () => {
     const dateObject = new Date();
@@ -15,6 +14,7 @@ const getDebugInfo = () => {
     return chalk.gray(`[${date} ${time} ${timestamp}]`);
 };
 
+console.debug = (...args) => debug(getDebugInfo(), ...args.map((arg) => chalk.blue(arg)));
 console.error = (...args) => error(getDebugInfo(), ...args.map((arg) => chalk.red(arg instanceof Error ? arg.stack : arg)));
 console.info = (...args) => info(getDebugInfo(), ...args);
 console.log = (...args) => log(getDebugInfo(), ...args);
