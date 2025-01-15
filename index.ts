@@ -1,4 +1,5 @@
 import chalk from 'chalk';
+import { inspect } from 'util';
 
 const { debug, error, info, log, warn } = require('console');
 
@@ -15,8 +16,8 @@ const getDebugInfo = () => {
     return chalk.gray(`[${date} ${time} ${timestamp}]`);
 };
 
-console.debug = (...args) => debug(getDebugInfo(), ...args.map((arg) => chalk.blue(arg)));
-console.error = (...args) => error(getDebugInfo(), ...args.map((arg) => chalk.red(arg instanceof Error ? arg.stack : arg)));
+console.debug = (...args) => debug(getDebugInfo(), ...args.map((arg) => chalk.blue(inspect(arg))));
+console.error = (...args) => error(getDebugInfo(), ...args.map((arg) => chalk.red(inspect(arg))));
 console.info = (...args) => info(getDebugInfo(), ...args);
 console.log = (...args) => log(getDebugInfo(), ...args);
-console.warn = (...args) => warn(getDebugInfo(), ...args.map((arg) => chalk.yellow(arg instanceof Error ? arg.stack : arg)));
+console.warn = (...args) => warn(getDebugInfo(), ...args.map((arg) => chalk.yellow(inspect(arg))));
