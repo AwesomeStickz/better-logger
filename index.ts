@@ -1,7 +1,6 @@
 import chalk from 'chalk';
 import { inspect } from 'util';
-
-const { debug, error, info, log, warn } = require('console');
+import { debug, error, info, log, warn } from 'console';
 
 const getDebugInfo = () => {
     const dateObject = new Date();
